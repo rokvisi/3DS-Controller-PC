@@ -45,6 +45,11 @@
         "functional": "cpp",
         "iterator": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "compare": "cpp",
+        "complex": "cpp",
+        "concepts": "cpp",
+        "ranges": "cpp",
+        "cinttypes": "cpp"
     }
 }

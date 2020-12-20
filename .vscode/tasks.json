@@ -4,7 +4,8 @@
 		{
 			"type": "shell",
 			"label": "build",
-			"command": "g++ server.cpp internet.cpp -o server.exe -lws2_32 -static-libgcc -static-libstdc++",
+			//"command": "g++ -Iinclude -std=c++2a src/* -g -o server.exe -lws2_32 -static-libgcc -static-libstdc++",
+			"command": "clang++ -Iinclude -std=c++2a src/* -g -o server.out -framework ApplicationServices",
             "group": {
                 "kind": "build",
                 "isDefault": true

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <memory>
 #include <string>
 
@@ -10,12 +12,12 @@
         #define WIN32_LEAN_AND_MEAN
     #endif
 
-    #include <winsock2.h> 
+    #include <winsock2.h>
     #include <windows.h>
     #include <ws2tcpip.h>
 
     typedef std::unique_ptr<addrinfo, void(__stdcall*)(addrinfo*)> addrinfo_unique_ptr;
-#else 
+#else
     #include <sys/types.h>
     #include <sys/socket.h>
     #include <netdb.h>
@@ -44,13 +46,13 @@ class UDP_Server {
 };
 
 class UDP_Client {
-	public:
-		UDP_Client(const std::string& ip, const std::string& port);
+    public:
+        UDP_Client(const std::string& ip, const std::string& port);
 
-		int send(const char* const data, const size_t size);
-		int send(const std::string& message);
+        int send(const char* const data, const size_t size);
+        int send(const std::string& message);
 
-	private:
-		int connection;
-		addrinfo_unique_ptr addr_info;
+    private:
+        int connection;
+        addrinfo_unique_ptr addr_info;
 };
